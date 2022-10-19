@@ -5,7 +5,7 @@ Getting image pixel information, slicing images, updating pixel values and updat
 __maintainer__ = "Nikunj Lad"
 
 # import the necessary packages
-import argparse, cv2
+import argparse, cv2, sys
 
 # construct argument parser
 ag = argparse.ArgumentParser()
@@ -48,3 +48,4 @@ image[0:cY, 0:cX] = (0, 255, 0)
 cv2.imshow("Updated", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+sys.exit(0)
