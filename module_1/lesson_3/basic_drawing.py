@@ -1,5 +1,5 @@
 """
-Doing basic drawing on canvases
+Doing basic drawing on canvases - lines, rectangles, circles
 """
 
 __maintainer__ = "Nikunj Lad"
