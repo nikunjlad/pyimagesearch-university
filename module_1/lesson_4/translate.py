@@ -23,7 +23,7 @@ import numpy as np
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--image", type=str, default="troupial.jpg", help="path to input image")
+ag.add_argument("-i", "--image", type=str, default="../../data/images/troupial.jpg", help="path to input image")
 args = vars(ag.parse_args())
 
 # read the input image
