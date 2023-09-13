@@ -9,9 +9,7 @@ Rotation is done using WarpAffine function with help of Rotation matrix generate
 __maintainer__ = "Nikunj Lad"
 
 # import libraries
-import cv2
-import argparse
-import imutils
+import cv2, argparse, imutils
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()
@@ -36,7 +34,7 @@ M = cv2.getRotationMatrix2D((cX, cY), -90, 1.0)      # creating a rotation matri
 rotated = cv2.warpAffine(image, M, (width, height))
 cv2.imshow("Image rotated 90 degress clockwise", rotated)
 
-# rotate the image around arbitary image location by 45 degress in anti-clockwise direction
+# rotate the image around arbitary image location by 35 degress in anti-clockwise direction
 M = cv2.getRotationMatrix2D((40, 90), 35, 1.0)      # creating a rotation matrix with center (cX, cY), angle of 35 degrees and keeping scale as original
 rotated = cv2.warpAffine(image, M, (width, height))
 cv2.imshow("Image rotated 35 degress counter-clockwise", rotated)
@@ -45,7 +43,7 @@ cv2.imshow("Image rotated 35 degress counter-clockwise", rotated)
 rotated = imutils.rotate(image, 180)        # using imutils to rotate an image and also to avoid having complicated logic
 cv2.imshow("Image rotated 180 degress counter-clockwise", rotated)
 
-# rotate the image around center by -65 degress in clockwise direction
+# rotate the image around center by 65 degress in clockwise direction
 rotated = imutils.rotate_bound(image, -65)        # using imutils to rotate an image but also ensure it does not get cut off from its bounds due to rotation operation
 cv2.imshow("Image rotated 65 degress clockwise", rotated)
 cv2.waitKey(0)
