@@ -5,9 +5,8 @@ Doing basic drawing on canvases - lines, rectangles, circles
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2
+import cv2, sys
 import numpy as np
-import sys
 
 # initialize a blank numpy canvas to draw our objects using opencv
 canvas = np.zeros((500, 500, 3), dtype="uint8")
