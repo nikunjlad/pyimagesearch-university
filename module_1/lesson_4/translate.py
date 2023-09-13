@@ -1,4 +1,5 @@
-"""
+"""_summary_
+
 Translate images i.e. shift them right, left, top, bottom or the combination of the 2 in the 2D plane
 
 Translation makes use of a concept called warping. Given a set of co-ordinates (x1,y1), warping maps them to new co-ordinates (x2, y2)
