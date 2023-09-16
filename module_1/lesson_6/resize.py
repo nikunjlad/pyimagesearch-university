@@ -1,6 +1,8 @@
 """
 _summary_
 
+This script shows how to resize an image using various interpolation methods. It also shows how to maintain the aspect ratio of the image while resizing an image up or down.
+Finally, we also recommended the best resize operations and techniques to use for our resize operations based on the conditions and situations we encounter.
 
 """
 
