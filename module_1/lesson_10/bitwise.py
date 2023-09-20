@@ -8,7 +8,7 @@ Segmentation, Masking, Mask RCNN, etc
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2, argparse, sys
+import cv2, sys
 import numpy as np
 
 # Create images to play around
