@@ -43,7 +43,7 @@ print(f"Crop image in intervals of 2 starting 3rd row and 1st column \n {crop} \
 
 # parsing command line arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", required=True, help="Input image to crop")
+ap.add_argument("-i", "--image", default="../../data/images/troupial.jpg", help="Input image to crop")
 args = vars(ap.parse_args())
 
 # read an image

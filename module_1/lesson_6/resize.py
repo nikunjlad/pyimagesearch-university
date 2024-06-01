@@ -54,7 +54,7 @@ resize_methods = [
 cv2.imshow("Original Image", image)
 for (name, method) in resize_methods:
     print(f"Resizing image using {name}")
-    resized_image = imutils.resize(image, width=width * 3, inter=method)
+    resized_image = imutils.resize(image, width=width * 2, inter=method)
     cv2.imshow(f"Image resized using {name}", resized_image)
     cv2.waitKey(0)
 
