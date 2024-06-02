@@ -13,7 +13,7 @@ import numpy as np
 
 # parsing command line arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, default="../../data/images/andy.jpg", help="Input image to crop")
+ap.add_argument("-i", "--image", type=str, default="../../data/images/andy.jpg", help="Path to input image")
 args = vars(ap.parse_args())
 
 # reading the image
