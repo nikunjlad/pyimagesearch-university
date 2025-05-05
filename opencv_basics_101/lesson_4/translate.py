@@ -21,6 +21,7 @@ __maintainer__ = "Nikunj Lad"
 # importing relevant libraries
 import cv2, argparse, sys
 import numpy as np
+import imutils
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()
@@ -40,6 +41,20 @@ cv2.imshow("Shifted to the top-right", shifted)
 M = np.float32([[1, 0, -50], [0, 1, 90]])
 shifted = cv2.warpAffine(image, M, (image.shape[1], image.shape[0]))
 cv2.imshow("Shifted to the bottom-left", shifted)
+
+# create another translational matrix to translate to 50 pixels to left and 90 pixels to the top
+M = np.float32([[1, 0, -50], [0, 1, -90]])
+shifted = cv2.warpAffine(image, M, (image.shape[1], image.shape[0]))
+cv2.imshow("Shifted to the top-left", shifted)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# Using imutils module to perform image translation
+# create another translational matrix to translate to 50 pixels to right and 90 pixels to the bottom
+M = np.float32([[1, 0, 50], [0, 1, 90]])
+shifted = imutils.translate(image, M[0][2], M[1][2])
+cv2.imshow("original", image)
+cv2.imshow("Image shift to bottom-right using imutils", shifted)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 sys.exit(0)
