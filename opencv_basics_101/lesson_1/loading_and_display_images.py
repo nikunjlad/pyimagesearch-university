@@ -5,12 +5,17 @@ Code to load image from disk and to save image to disk
 __maintainer__ = "Nikunj Lad"
 
 # importing relevant libraries
-import argparse, cv2, sys
+import argparse
+import cv2
+from pathlib import Path
+import sys
+
+DATA_DIR = Path(__file__).parent.parent.parent / "data"
 
 # construct argument parser
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--input", required=True, help="path to input image")			# argument to load input images given its path
-ag.add_argument("-o", "--output", required=True, help="path to output image")		# argument to save input images to the given path
+ag.add_argument("-i", "--input", default=DATA_DIR / "images/sun.jpg", help="path to input image")			# argument to load input images given its path
+ag.add_argument("-o", "--output", default=Path.cwd() / "new_image.jpg", help="path to output image")		# argument to save input images to the given path
 args = vars(ag.parse_args())				# create a dictionary of the parsed command line arguments to be loaded for later use
 
 # load image from disk and grab spatial dimensions including width, height and channels

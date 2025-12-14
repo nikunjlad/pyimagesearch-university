@@ -22,10 +22,13 @@ __maintainer__ = "Nikunj Lad"
 import cv2, argparse, sys
 import numpy as np
 import imutils
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent.parent.parent / "data"
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--image", type=str, default="../../data/images/troupial.jpg", help="path to input image")
+ag.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/troupial.jpg", help="path to input image")
 args = vars(ag.parse_args())
 
 # read the input image
