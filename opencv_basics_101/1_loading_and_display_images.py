@@ -1,14 +1,19 @@
-"""
-Code to load image from disk and to save image to disk
-"""
+###################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# Code to load image from disk and to save image to disk
+#
+###################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # importing relevant libraries
 import argparse
 import cv2
-from pathlib import Path
 import sys
+from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 

@@ -1,6 +1,11 @@
-"""
-Getting image pixel information, slicing images, updating pixel values and updating image regions
-"""
+###################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# Getting image pixel information, slicing images, updating pixel values and updating image regions
+#
+###################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 

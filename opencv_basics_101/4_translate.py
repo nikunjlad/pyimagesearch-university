@@ -1,34 +1,41 @@
-"""_summary_
-
-Translate images i.e. shift them right, left, top, bottom or the combination of the 2 in the 2D plane
-
-Translation makes use of a concept called warping. Given a set of co-ordinates (x1,y1), warping maps them to new co-ordinates (x2, y2)
-The matrix used for translation is somewhat like this:
-		T = [[1, 0, shiftX],
-		     [0, 1, shiftY]]
-
-In the above 2x3 matrix, the shiftX and shiftY parameters control how the image is translated in the 2D plane
-1. -ve shiftX values: translate an image to the left in the 2D plane
-2. +ve shiftX values: translate an image to the right in the 2D plane
-3. -ve shiftY values: translate an image to the top in the 2D plane
-4. +ve shiftY values: translate an image to the bottom in the 2D plane
-
-A combination of above moves images in top-left, top-right, bottom-left, bottom-right locations or simply linearly across all 4 directions
-"""
+###############################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# Translate images i.e. shift them right, left, top, bottom or the combination of the 2 in the 2D plane
+#
+# Translation makes use of a concept called warping.
+# Given a set of co-ordinates (x1,y1), warping maps them to new co-ordinates (x2, y2)
+#
+# The matrix used for translation is somewhat like this:
+#                  T = [[1, 0, shiftX],
+# 					   [0, 1, shiftY]]
+# In the above 2x3 matrix, the shiftX and shiftY parameters control how the image is translated in the 2D plane
+# 1. -ve shiftX values: translate an image to the left in the 2D plane
+# 2. +ve shiftX values: translate an image to the right in the 2D plane
+# 3. -ve shiftY values: translate an image to the top in the 2D plane
+# 4. +ve shiftY values: translate an image to the bottom in the 2D plane
+#
+# A combination of above moves images in top-left, top-right, bottom-left, bottom-right locations linearly
+#
+###############################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # importing relevant libraries
-import cv2, argparse, sys
+import argparse
+import cv2
 import numpy as np
 import imutils
+import sys
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/troupial.jpg", help="path to input image")
+ag.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/andy.jpg", help="path to input image")
 args = vars(ag.parse_args())
 
 # read the input image

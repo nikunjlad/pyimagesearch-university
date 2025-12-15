@@ -1,17 +1,24 @@
-"""
-_summary_
-
-This script shows how to crop an image. We will first create a sample numpy array with random numbers and understand cropping on the command line. Next, we will import a custom image and extract
-ROI (regions of interest) using cropping
-
-"""
+############################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# This script shows how to crop an image.
+# We will first create a sample numpy array with random numbers and understand cropping on the command line.
+# Next, we will import a custom image and extract ROI (regions of interest) using cropping
+#
+############################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2, argparse, sys
+import argparse
+import cv2
 import numpy as np
+import sys
+from pathlib import Path
 
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # create an image with numbers using numpy
 I = np.arange(0, 25)  # create an array with numbers from  0 to 25
@@ -43,7 +50,7 @@ print(f"Crop image in intervals of 2 starting 3rd row and 1st column \n {crop} \
 
 # parsing command line arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", default="../../data/images/troupial.jpg", help="Input image to crop")
+ap.add_argument("-i", "--image", default=DATA_DIR / "images/sunset.jpg", help="Input image to crop")
 args = vars(ap.parse_args())
 
 # read an image
@@ -58,6 +65,5 @@ cv2.imshow("Only Bird", bird)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
 sys.exit(0)
 

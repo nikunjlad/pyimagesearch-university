@@ -1,15 +1,19 @@
-"""
-_summary_
-
-This script shows how to perform bitwise operations like AND, OR, XOR and NOT on sets of binary images. These operations are very useful later in CV while learning
-Segmentation, Masking, Mask RCNN, etc
-"""
+#########################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# This script shows how to perform bitwise operations like AND, OR, XOR and NOT on sets of binary images.
+# These operations are very useful later in CV while learning about Segmentation, Masking, Mask RCNN, etc
+#
+#########################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2, sys
+import cv2
 import numpy as np
+import sys
 
 # Create images to play around
 rectangle = np.zeros((300, 300), dtype=np.uint8)
@@ -50,5 +54,4 @@ cv2.imshow("NOT", bitwise_not)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
 sys.exit(0)
