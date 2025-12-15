@@ -24,7 +24,7 @@ import numpy as np
 import imutils
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # parse command-line arguments
 ag = argparse.ArgumentParser()

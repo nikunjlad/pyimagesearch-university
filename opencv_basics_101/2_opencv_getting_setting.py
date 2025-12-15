@@ -10,7 +10,7 @@ import cv2
 import sys
 from pathlib import Path
 
-DATA_DIR = Path(__file__).parent.parent.parent / "data"
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # construct argument parser
 ag = argparse.ArgumentParser()
