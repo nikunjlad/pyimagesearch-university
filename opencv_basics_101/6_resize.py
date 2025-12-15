@@ -1,24 +1,34 @@
-"""
-_summary_
-
-This script shows how to resize an image using various interpolation methods. It also shows how to maintain the aspect ratio of the image while resizing an image up or down.
-Finally, we also recommended the best resize operations and techniques to use for our resize operations based on the conditions and situations we encounter.
-
-"""
+##########################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# This script shows how to resize an image using various interpolation methods.
+# It also shows how to maintain the aspect ratio of the image while resizing an image up or down.
+# Finally, we also recommended the best resize operations and techniques to use for our resize operations
+# based on the conditions and situations we encounter.
+#
+##########################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # importing relevant libraries
-import cv2, argparse, imutils, sys
+import argparse
+import cv2
+import imutils
+import sys
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # create argument parser handler
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--image", required=True, help="path to input image")
+ag.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/troupial.jpg", help="path to input image")
 args = vars(ag.parse_args())
 
 # read the image
 image = cv2.imread(args["image"])
-(height, width) = image.shape[0:2]  # get the height and width of the image
+(height, width) = image.shape[0:2]                  # get the height and width of the image
 aspect_ratio = width * 1.0 / height
 cv2.imshow("Original Image", image)
 

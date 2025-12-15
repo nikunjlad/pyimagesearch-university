@@ -1,12 +1,18 @@
-"""
-Doing basic drawing on canvases - lines, rectangles, circles
-"""
+##################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# Doing basic drawing on canvases - lines, rectangles, circles, and random circles
+#
+##################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2, sys
+import cv2
 import numpy as np
+import sys
 
 # initialize a blank numpy canvas to draw our objects using opencv
 canvas = np.zeros((500, 500, 3), dtype="uint8")

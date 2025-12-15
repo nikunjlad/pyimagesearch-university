@@ -8,12 +8,17 @@ we want to extract as foreground and everything else acting as background.
 __maintainer__ = "Nikunj Lad"
 
 # import relevant libraries
-import cv2, sys, argparse
+import argparse
+import cv2
 import numpy as np
+import sys
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # parsing command line arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, default="../../data/images/opencv_logo.png", help="Path to input image")
+ap.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/opencv_logo.png", help="Path to input image")
 args = vars(ap.parse_args())
 
 # read the input image
@@ -50,3 +55,4 @@ cv2.imshow("Red", red)
 cv2.imshow("Merged", merged)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+sys.exit(0)

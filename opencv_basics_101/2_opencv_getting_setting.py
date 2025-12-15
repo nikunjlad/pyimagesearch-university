@@ -1,15 +1,25 @@
-"""
-Getting image pixel information, slicing images, updating pixel values and updating image regions
-"""
+###################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# Getting image pixel information, slicing images, updating pixel values and updating image regions
+#
+###################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
 # import the necessary packages
-import argparse, cv2, sys
+import argparse
+import cv2
+import sys
+from pathlib import Path
+
+DATA_DIR = Path(__file__).parent.parent / "data"
 
 # construct argument parser
 ag = argparse.ArgumentParser()
-ag.add_argument("-i", "--image", type=str, default="sunset.jpg", help="path to input image")
+ag.add_argument("-i", "--image", type=str, default=DATA_DIR / "images/sunset.jpg", help="path to input image")
 args = vars(ag.parse_args())
 
 # load image and grab its spatial dimensions and display the image
