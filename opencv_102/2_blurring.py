@@ -14,7 +14,7 @@
 # though it helps to understand the concept of blurring
 #
 # 2. Gaussian Blurring
-# - This technique take weighted average of the pixels under the kernel area by giving importance to center pixel vs the border
+# - This technique uses weighted average of the pixels under the kernel area by giving importance to center pixel vs the border
 # pixels. The weights follow a Gaussian distribution (bell curve) hence the name.
 # - This type of blurring is more natural to human eye and is widely used in computer vision applications. Almost always we use
 # Gaussian blurring unless there is a specific reason to use some other technique.
@@ -63,6 +63,7 @@ for (kx, ky) in kernel_sizes:
     cv2.waitKey(0)
 
 # Apply Median Blurring
+# OpenCV only accepts single integer value for kernel size in median blurring as it always uses square kernels
 for k in [3, 5, 7, 9, 15]:
     blurred = cv2.medianBlur(image, k)
     cv2.imshow(f"Median Blurring: {k}x{k}", blurred)
