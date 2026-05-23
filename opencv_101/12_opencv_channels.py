@@ -1,9 +1,12 @@
-"""
-_summary_
-
-This script shows how to perform masking on images to segment out ROI (regions of interest) using bitwise operations. Essentially a binary mask is used with the region
-we want to extract as foreground and everything else acting as background.
-"""
+##############################################################################################################################
+#
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025 Nikunj Lad
+#
+# This script shows how to split the image into its constituent channels (BGR) and then merge them back together.
+# It also shows how to visualize each channel as an image to understand the impact of each color channel on the overall image.
+#
+##############################################################################################################################
 
 __maintainer__ = "Nikunj Lad"
 
